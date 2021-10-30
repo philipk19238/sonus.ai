@@ -1,5 +1,0 @@
-Flask
-flask-restx
-flask-cors
-requests
-numpy
