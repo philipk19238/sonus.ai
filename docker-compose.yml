@@ -1,5 +1,19 @@
 version: '3.8'
 services:
+  db:
+    image: mongo
+    env_file: ./env/db.env
+    ports:
+      - 27017:27017
+    volumes:
+      - ~/mongo/data:/data/db
+  mongo-express:
+    image: mongo-express
+    env_file: ./env/mongo-express.env
+    depends_on:
+      - db
+    ports:
+      - 8081:8081
   backend: 
     build: ./backend
     env_file: ./env/backend.env
@@ -11,6 +25,8 @@ services:
       - FLASK_APP=app
       - FLASK_ENV=development
       - FLASK_RUN_HOST=0.0.0.0
+    depends_on:
+      - db
     command: ['flask', 'run']
   frontend:
     build: frontend
