@@ -1,0 +1,28 @@
+version: '3.8'
+services:
+  backend: 
+    build: ./backend
+    env_file: ./env/backend.env
+    ports:
+      - 5000:5000
+    volumes: 
+      - ./backend:/app
+    environment: 
+      - FLASK_APP=app
+      - FLASK_ENV=development
+      - FLASK_RUN_HOST=0.0.0.0
+    command: ['flask', 'run']
+  frontend:
+    build: frontend
+    command: ["npm", "start"]
+    volumes:
+      - ./frontend:/frontend
+      - node-modules:/frontend/node_modules
+    environment:
+      - NODE_ENV=development
+    ports:
+      - '3000:3000'
+    depends_on:
+      - backend
+volumes:
+  node-modules:
