@@ -13,4 +13,7 @@ pandas
 Pillow
 pydub
 matplotlib
+scikit-learn
+scikit-image
+soundfile
 
