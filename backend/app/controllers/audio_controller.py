@@ -1,7 +1,7 @@
 import json
 
 from flask_restx import Namespace, Resource
-from flask import current_app
+from flask import current_app, request
 from werkzeug.datastructures import FileStorage
 
 from ..clients import TranscribeClient, BucketClient
@@ -10,6 +10,7 @@ audio_controller = Namespace('Audio', 'Audio endpoint', '/audio')
 upload_parser = audio_controller.parser()
 upload_parser.add_argument('file', location='files',
                            type=FileStorage, required=True)
+
 @audio_controller.route('')
 @audio_controller.expect(upload_parser)
 @audio_controller.doc(security=None)
