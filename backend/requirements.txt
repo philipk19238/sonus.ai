@@ -4,3 +4,5 @@ flask-cors
 requests
 numpy
 twilio
+google-cloud-storage
+google-cloud-speech

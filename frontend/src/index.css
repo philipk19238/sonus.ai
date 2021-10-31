@@ -1,0 +1,29 @@
+.font-loader{ 
+    font-family: 'typeface-dm-sans', sans-serif;
+    text-align: center;
+  }
+  .btn{
+    cursor: pointer;
+    background-color: #3200BD;
+    border: none;
+    color: white;
+    width: 225px;
+    height: 50px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    border-radius: 12px;
+  }
+  .hdr{
+    margin-left: 110px; 
+  }
+  .demo{
+    border-radius: 25px;
+    margin-top: 80px;
+    margin-right: 110px; 
+    padding-left: 20px;
+    box-shadow: 5px 5px 10px #3200BD;
+  }
+  
