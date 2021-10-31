@@ -7,21 +7,14 @@ services:
       - 27017:27017
     volumes:
       - ~/mongo/data:/data/db
-  mongo-express:
-    image: mongo-express
-    env_file: ./env/mongo-express.env
-    depends_on:
-      - db
-    ports:
-      - 8081:8081
-  backend: 
+  backend:
     build: ./backend
     env_file: ./env/backend.env
     ports:
       - 5000:5000
-    volumes: 
+    volumes:
       - ./backend:/app
-    environment: 
+    environment:
       - FLASK_APP=app
       - FLASK_ENV=development
       - FLASK_RUN_HOST=0.0.0.0
@@ -30,7 +23,7 @@ services:
     command: ['flask', 'run']
   frontend:
     build: frontend
-    command: ["npm", "start"]
+    command: ['npm', 'start']
     volumes:
       - ./frontend:/frontend
       - node-modules:/frontend/node_modules
@@ -40,5 +33,12 @@ services:
       - '3000:3000'
     depends_on:
       - backend
+  mongo-express:
+    image: mongo-express
+    env_file: ./env/mongo-express.env
+    depends_on:
+      - db
+    ports:
+      - 8081:8081
 volumes:
   node-modules:

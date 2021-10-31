@@ -213,6 +213,8 @@ logs
 node_modules
 bower_components
 
+data/
+
 *.sublime*
 
 psd
