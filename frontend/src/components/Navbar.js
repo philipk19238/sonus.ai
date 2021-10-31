@@ -27,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
         backgroundColor: 'rgb(255, 255, 255)'
     },
     appBarTransparent: {
-        backgroundColor: 'rgba(255, 255, 255,0.5)'
+        backgroundColor: 'rgba(255, 255, 255)'
     },
     customizeToolbar: {
         minHeight: 100
