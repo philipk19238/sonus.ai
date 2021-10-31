@@ -22,6 +22,9 @@
   .spacer{
     margin-top: 110px;
   }
+  .heavyspacer{
+    margin-top: 200px; 
+  }
   .demo{
     border-radius: 25px;
     margin-top: 80px;
@@ -29,4 +32,29 @@
     padding-left: 20px;
     box-shadow: 5px 5px 10px #3200BD;
   }
+  .cardPadder{
+    margin-left: 110px; 
+    margin-top: 180px; 
+  }
+  .nextCard{
+    margin-left: 110px; 
+    margin-top: 40px; 
+  }
+  .cardStyle{
+    font-family: 'typeface-dm-sans', sans-serif;
+    text-align: center;
+    border-radius: 10px;
+    box-shadow: 1px 1px 5px #3200BD;
+  }
+  .numList{
+    margin-top: 80px;
+    margin-right: 110px;
+  }
+
+  .play{
+      cursor: pointer;
+  }
+  
+
+  
   

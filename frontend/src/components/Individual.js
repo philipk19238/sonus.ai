@@ -1,8 +1,11 @@
-import React from 'react';
+import React, {useEffect} from 'react';
 import ButtonAppBar from './Navbar';
 import { makeStyles } from '@material-ui/core/styles';
 import Paper from '@material-ui/core/Paper';
 import Grid from '@material-ui/core/Grid';
+import { Howl } from 'howler';
+import { useParams } from 'react-router-dom';
+
 
 import '../index.css';
 require('typeface-dm-sans');
@@ -18,48 +21,54 @@ const useStyles = makeStyles(theme => ({
 }));
 
 const mockData = {
-  phoneNumber: '+18329384589',
-  averageLength: '76',
-  averageSentiment: '5',
+  phoneNumber: '+1 832-938-4589',
+  averageLength: '9.4',
+  averageSentiment: 'happy',
   data: [
     {
-      length: 5,
+      length: 6,
       sentiment: 'happy',
       file:
-        'https://api.twilio.com/2010-04-01/Accounts/AC8053fa3bf118f0bb033d17bd27e5f19c/Recordings/RE12bfbf3a297130d1348aebc4c1edc91e'
+        'https://api.twilio.com/2010-04-01/Accounts/AC8053fa3bf118f0bb033d17bd27e5f19c/Recordings/RE12bfbf3a297130d1348aebc4c1edc91e.mp3'
     },
     {
       length: 10,
-      sentiment: 'mad',
+      sentiment: 'angry',
       file:
-        'https://api.twilio.com/2010-04-01/Accounts/AC8053fa3bf118f0bb033d17bd27e5f19c/Recordings/RE12bfbf3a297130d1348aebc4c1edc91e'
+        'https://api.twilio.com/2010-04-01/Accounts/AC589ef5b0e38c799a4652ad18c0a2bb39/Recordings/REc6dbf04e2b6191d41e1d9dda6c00aa79.mp3'
     },
     {
       length: 15,
-      sentiment: 'sad',
+      sentiment: 'happy',
       file:
-        'https://api.twilio.com/2010-04-01/Accounts/AC8053fa3bf118f0bb033d17bd27e5f19c/Recordings/RE12bfbf3a297130d1348aebc4c1edc91e'
+        'https://api.twilio.com/2010-04-01/Accounts/AC8053fa3bf118f0bb033d17bd27e5f19c/Recordings/RE12bfbf3a297130d1348aebc4c1edc91e.mp3'
+    },
+    {
+      length: 11,
+      sentiment: 'happy',
+      file:
+        'https://api.twilio.com/2010-04-01/Accounts/AC8053fa3bf118f0bb033d17bd27e5f19c/Recordings/RE12bfbf3a297130d1348aebc4c1edc91e.mp3'
     },
     {
       length: 5,
       sentiment: 'neutral',
       file:
-        'https://api.twilio.com/2010-04-01/Accounts/AC8053fa3bf118f0bb033d17bd27e5f19c/Recordings/RE12bfbf3a297130d1348aebc4c1edc91e'
-    },
-    {
-      length: 5,
-      sentiment: 'neutral',
-      file:
-        'https://api.twilio.com/2010-04-01/Accounts/AC8053fa3bf118f0bb033d17bd27e5f19c/Recordings/RE12bfbf3a297130d1348aebc4c1edc91e'
+        'https://api.twilio.com/2010-04-01/Accounts/AC8053fa3bf118f0bb033d17bd27e5f19c/Recordings/RE12bfbf3a297130d1348aebc4c1edc91e.mp3'
     }
   ]
 };
 
 const Individual = () => {
   const classes = useStyles();
-  const startPlaying = src => {
-    let audio = new Audio(src);
-    audio.play();
+  const {id} = useParams()
+  useEffect(() => {
+      console.log(`This is the id ${id}`)
+  }, [id])
+  const soundPlay = src => {
+    const sound = new Howl({
+      src: [src]
+    });
+    sound.play();
   };
   return (
     <div
@@ -70,7 +79,7 @@ const Individual = () => {
         height: '100vh',
         paddingLeft: '10%',
         paddingRight: '10%',
-        paddingTop: '5%'
+        paddingTop: '1%'
       }}
       className='font-loader'
     >
@@ -81,7 +90,7 @@ const Individual = () => {
             className={classes.paper}
             style={{
               height: '20%',
-              boxShadow: '5px 5px 10px #3200BD',
+              boxShadow: '1px 1px 5px #3200BD',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center'
@@ -91,7 +100,7 @@ const Individual = () => {
               <img src='https://img.icons8.com/material-sharp/50/000000/user.png' />
             </Grid>
             <Grid item xs={8}>
-              <h2 style={{ color: '#3200BD' }}>{mockData.phoneNumber}</h2>
+              <h3 style={{ color: '#3200BD' }}>{mockData.phoneNumber}</h3>
             </Grid>
           </Paper>
           <Paper
@@ -99,31 +108,30 @@ const Individual = () => {
             style={{
               marginTop: '10%',
               height: '20%',
-              boxShadow: '5px 5px 10px #3200BD',
+              boxShadow: '1px 1px 5px #3200BD',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center'
-              // backgroundColor: '#F8DEF7'
             }}
           >
-            <h2 style={{ color: '#3200BD' }}>
-              average length: {mockData.averageLength}
-            </h2>
+            <h3 style={{ color: '#3200BD' }}>
+              avg call time: {mockData.averageLength} min
+            </h3>
           </Paper>
           <Paper
             className={classes.paper}
             style={{
               marginTop: '10%',
               height: '20%',
-              boxShadow: '5px 5px 10px #3200BD',
+              boxShadow: '1px 1px 5px #3200BD',
               display: 'flex',
               justifyContent: 'center',
               alignItems: 'center'
             }}
           >
-            <h2 style={{ color: '#3200BD' }}>
-              average sentiment: {mockData.averageSentiment}
-            </h2>
+            <h3 style={{ color: '#3200BD' }}>
+              avg sentiment: {mockData.averageSentiment}
+            </h3>
           </Paper>
         </Grid>
         <Grid item xs={8}>
@@ -135,23 +143,39 @@ const Individual = () => {
                 boxShadow: '1px 1px 5px #3200BD'
               }}
             >
-              <Grid container spacing={8}>
+              <Grid container spacing={2}>
                 <Grid
                   item
-                  xs={2}
+                  xs={6}
                   style={{
                     display: 'flex',
                     justifyContent: 'center',
                     alignItems: 'center'
                   }}
                 >
-                  <img
+                  <img className = "play"
                     src='https://img.icons8.com/ios-glyphs/50/000000/circled-play.png'
-                    onClick={() => startPlaying(mockData.file)}
-                  ></img>
+                    onClick={() => {
+                      soundPlay(audioData.file);
+                    }}
+                    style={{ paddingRight: '5%' }}
+                  />
+                  <img src='https://img.icons8.com/windows/32/000000/audio-wave--v2.png' />
+                  <img src='https://img.icons8.com/windows/32/000000/audio-wave--v2.png' />
+                  <img src='https://img.icons8.com/windows/32/000000/audio-wave--v2.png' />
+                  <img src='https://img.icons8.com/windows/32/000000/audio-wave--v2.png' />
+                  <img src='https://img.icons8.com/windows/32/000000/audio-wave--v2.png' />
+                  <img src='https://img.icons8.com/windows/32/000000/audio-wave--v2.png' />
+                  <img src='https://img.icons8.com/windows/32/000000/audio-wave--v2.png' />
                 </Grid>
-                <Grid item xs={10}>
-                  <h2 style={{ color: '#3200BD' }}>{mockData.phoneNumber}</h2>
+                <Grid
+                  item
+                  xs={4}
+                  style={{ textAlign: 'left', paddingLeft: '5%' }}
+                >
+                  <h3 style={{ color: '#3200BD' }}>
+                    sentiment: {audioData.sentiment}
+                  </h3>
                 </Grid>
               </Grid>
             </Paper>
