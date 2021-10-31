@@ -1,21 +1,19 @@
 import React from 'react';
 import Home from './components/Home';
 import Visualizer from './components/Visualizer';
-import {
-    BrowserRouter,
-    Switch,
-    Route,
-    Link
-  } from "react-router-dom";
+import Individual from './components/Individual';
+import { BrowserRouter, Switch, Route, Link } from 'react-router-dom';
 import './index.css';
 
 require('typeface-dm-sans');
 
 function App() {
-return (
+  return (
     <Switch>
-     <Route exact path="/" component={Home} />
-     <Route path="/visualizer" component={Visualizer} />
-   </Switch>
-);}
+      <Route exact path='/' component={Home} />
+      <Route path='/visualizer' component={Visualizer} />
+      <Route path='/individual' component={Individual} />
+    </Switch>
+  );
+}
 export default App;
