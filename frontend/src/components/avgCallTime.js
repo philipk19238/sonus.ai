@@ -10,27 +10,27 @@ import '../index.css';
 
 require('typeface-dm-sans');
 
-const card = (
-    <React.Fragment>
-      <CardContent style={{backgroundColor: "#FFFFFF"}}>
-        <Typography style={{color: "#3200BD", fontSize: 24, fontWeight: 'bold'}}>
-          avg. call time
-        </Typography>
-        <Divider style={{ background: '#3200BD' }} variant="middle" />
-        <Typography style={{color: "#3200BD", fontSize: 24}}>
-            <br/>
-          10 minutes
-        </Typography>
-      </CardContent>
-    </React.Fragment>
-  );
-  
-  export default function OutlinedCard() {
-    return (
-        <div className = "cardPadder" > 
-      <Box sx={{ maxWidth: 250}}>
-        <Card className = "cardStyle" variant="outlined">{card} </Card>
+export default function OutlinedCard({ avgTime }) {
+  return (
+    <div className='cardPadder'>
+      <Box sx={{ maxWidth: 250 }}>
+        <Card className='cardStyle' variant='outlined'>
+          <React.Fragment>
+            <CardContent style={{ backgroundColor: '#FFFFFF' }}>
+              <Typography
+                style={{ color: '#3200BD', fontSize: 24, fontWeight: 'bold' }}
+              >
+                avg. call time
+              </Typography>
+              <Divider style={{ background: '#3200BD' }} variant='middle' />
+              <Typography style={{ color: '#3200BD', fontSize: 24 }}>
+                <br />
+                {avgTime} seconds
+              </Typography>
+            </CardContent>
+          </React.Fragment>
+        </Card>
       </Box>
-      </div>
-    );
-  }
+    </div>
+  );
+}

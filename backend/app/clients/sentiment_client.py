@@ -27,6 +27,7 @@ class SentimentClient:
             chunk_name = f'chunk{idx}.wav'
             chunk.export(chunk_name, format='wav')
             yield chunk_name
+        self.teardown()
 
     def get_sentiment_from_chunk(self, chunk_name, model):
         name, _ = chunk_name.split('.')

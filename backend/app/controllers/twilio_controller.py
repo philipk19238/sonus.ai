@@ -15,7 +15,7 @@ class ReceiveInboundController(Resource):
         resp = VoiceResponse()
         phone_number = request.form['From']
         resp.say(
-            'This call is going to be recorded for customer experience purposes. Please let us know what we can help you with after the tone. Press the pound key when you are done.')
+            'This call is going to be recorded for Sonus customer experience purposes. Please let us know what we can help you with after the tone. Press the pound key when you are done.')
         resp.record(recording_status_callback='/api/audio/' + phone_number,
                     recording_status_callback_event='completed', finishOnKey='#')
         # evaluated_sentiment = requests.get(BACKEND_URL)

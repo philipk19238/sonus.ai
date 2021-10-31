@@ -42,6 +42,7 @@ class UploadAudioController(Resource):
             curr_user.save()
         except:
             traceback.print_exc()
-            for filename in os.listdir(os.getcwd()):
-                if filename.endswith('.wav') or filename.endswith('.png'):
-                    os.remove(filename)
+
+        for filename in os.listdir(os.getcwd()):
+            if filename.endswith('.wav') or filename.endswith('.png'):
+                os.remove(filename)

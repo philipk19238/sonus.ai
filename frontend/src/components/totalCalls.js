@@ -8,27 +8,28 @@ import Typography from '@material-ui/core/Typography';
 import Divider from '@material-ui/core/Divider';
 import '../index.css';
 require('typeface-dm-sans');
-const totalcard = (
-    <React.Fragment>
-      <CardContent style={{backgroundColor: "#FFFFFF"}}>
-        <Typography style={{color: "#3200BD", fontSize: 24, fontWeight: 'bold'}}>
-          total calls
-        </Typography>
-        <Divider style={{ background: '#3200BD' }} variant="middle" />
-        <Typography style={{fontSize: 24, color: "#3200BD"}}>
-            <br/>
-          98
-        </Typography>
-      </CardContent>
-    </React.Fragment>
-  );
-  
-  export default function TotalCard() {
-    return (
-        <div className = "nextCard" > 
+
+export default function TotalCard({ totalCall }) {
+  return (
+    <div className='nextCard'>
       <Box sx={{ maxWidth: 250 }}>
-        <Card className = "cardStyle" variant="outlined">{totalcard} </Card>
+        <Card className='cardStyle' variant='outlined'>
+          <React.Fragment>
+            <CardContent style={{ backgroundColor: '#FFFFFF' }}>
+              <Typography
+                style={{ color: '#3200BD', fontSize: 24, fontWeight: 'bold' }}
+              >
+                total calls
+              </Typography>
+              <Divider style={{ background: '#3200BD' }} variant='middle' />
+              <Typography style={{ fontSize: 24, color: '#3200BD' }}>
+                <br />
+                {totalCall}
+              </Typography>
+            </CardContent>
+          </React.Fragment>
+        </Card>
       </Box>
-      </div>
-    );
-  }
+    </div>
+  );
+}

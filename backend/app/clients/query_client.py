@@ -1,4 +1,5 @@
 from ..models.user import User
+from functools import lru_cache
 from abc import abstractmethod
 import numpy as np
 import json
@@ -21,9 +22,17 @@ class QueryClient:
         buckets = [1.6]
         while len(buckets) < 5:
             buckets.append(buckets[-1] + 1.6)
-        for idx, key in enumerate(buckets):
-            if sentiment_score <= key:
+        idx = len(buckets) - 2
+        while idx > 1:
+            key = buckets[idx]
+            prev_key = buckets[idx - 1]
+            if prev_key <= sentiment_score <= key:
                 return dic[idx + 1]
+            idx -= 1
+        if sentiment_score <= buckets[0]:
+            return dic[1]
+        else:
+            return dic[5]
 
 
 class QueryPhoneNumberClient(QueryClient):
@@ -32,17 +41,34 @@ class QueryPhoneNumberClient(QueryClient):
         self.phone_number = phone_number
 
     @property
+    @lru_cache()
     def user(self):
         user = User.objects(phone_number=self.phone_number)
-        return None if not user else user[0].to_json()
+        return None if not user else user[0]
+
+    @property
+    def average_length(self):
+        res = []
+        for call in self.user.calls:
+            res.append(call.length)
+        return int(np.mean(res))
+
+    @property
+    def average_sentiment(self):
+        res = []
+        for call in self.user.calls:
+            res.append(call.sentiment)
+        return self.classify_sentiment(np.mean(res))
 
     def create_output(self):
         user_data = self.user
         if user_data:
-            user_data = json.loads(user_data)
-            for idx, call in enumerate(user_data['calls']):
+            user_data = json.loads(user_data.to_json())
+            user_data['average_length'] = self.average_length
+            user_data['average_sentiment'] = self.average_sentiment
+            for idx, phone_call in enumerate(user_data['calls']):
                 user_data['calls'][idx]['sentiment'] = self.classify_sentiment(
-                    user_data['calls'][idx]['sentiment'])
+                    phone_call['sentiment'])
         return {'data': user_data}
 
 
@@ -65,7 +91,7 @@ class QueryAllClient(QueryClient):
         for user in self.users:
             curr = [call.length for call in user.calls]
             times.append(np.mean(curr))
-        return np.mean(times)
+        return int(np.mean(times))
 
     @property
     def total_calls(self):
