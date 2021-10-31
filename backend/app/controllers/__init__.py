@@ -13,10 +13,5 @@ api = Api(api_bp,
           validate=False
           )
 api.add_namespace(hello_world_controller)
-<<<<<<< HEAD
 api.add_namespace(twilio_controller)
 api.add_namespace(audio_controller)
-=======
-api.add_namespace(audio_controller)
-api.add_namespace(twilio_controller)
->>>>>>> a26f8063c4ebe5192059888c3272a1d027f89578
