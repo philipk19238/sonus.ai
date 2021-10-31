@@ -6,8 +6,3 @@ class Config:
     MONGODB_SETTINGS = {
         'host': os.getenv('MONGO_HOST')
     }
-    
-
-
-
-    
