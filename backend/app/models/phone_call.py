@@ -6,4 +6,5 @@ class PhoneCall(BaseEmbeddedDocument):
     id = db.UUIDField()
     length = db.IntField()
     sentiment = db.StringField()
-    link = db.StringField() 
+    link = db.StringField()
+    date = db.DateTimeField()

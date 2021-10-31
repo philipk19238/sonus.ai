@@ -6,4 +6,4 @@ class User(BaseEmbeddedDocument):
 
     id = db.UUIDField()
     phone_number = db.StringField()
-    calls = db.EmbeddedDocumentField(PhoneCall)
+    calls = db.EmbeddedDocumentListField(PhoneCall)
