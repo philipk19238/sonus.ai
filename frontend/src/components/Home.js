@@ -18,11 +18,10 @@ return (
     <br></br>
     <br></br>
     <br></br>
-    <br></br>
-    <br></br>
 
     <body>
-    <img className = 'demo' src={demo} width="720px" height="450px" alt="sonus demo" align = "right"/>
+      
+    <img className = 'demo' src={demo} width="45%" height="25%" alt="sonus demo" align = "right"/>
     <div className = "font-loader" 
                 style={{
                 display: "flex",

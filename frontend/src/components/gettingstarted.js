@@ -7,7 +7,7 @@ import {Link } from "react-router-dom";
 
         return (
             <Link to="/visualizer" style={{textDecoration: 'none'}}>
-            <Button class = "btn" style={{color: '#FFFFFF', fontSize: 20, fontWeight: 'bold', textDecoration: 'none', textTransform: "none"}}> get started </Button>
+            <Button class = "btn" style={{color: '#FFFFFF', fontSize: 20, fontWeight: 'bold', textDecoration: 'none', textTransform: "none"}}> go to dashboard </Button>
             </Link>
         );
 
