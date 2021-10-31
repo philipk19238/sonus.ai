@@ -3,3 +3,17 @@ flask-restx
 flask-cors
 requests
 numpy
+twilio
+google-cloud-storage
+google-cloud-speech
+twilio
+flask-mongoengine
+librosa
+pandas
+Pillow
+pydub
+matplotlib
+scikit-learn
+scikit-image
+soundfile
+
