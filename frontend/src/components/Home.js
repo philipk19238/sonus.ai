@@ -13,13 +13,7 @@ return (
     <html>
     <div className = "font-loader">
     <ButtonAppBar/>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-    <br></br>
-
-    <body>
+    <body className = "spacer">
     <img className = 'demo' src={demo} width="45%" height="25%" alt="sonus demo" align = "right"/>
     <div className = "font-loader" 
                 style={{
@@ -51,17 +45,6 @@ return (
             >
     <p className = "hdr" align = "left">
       <GettingStarted/></p>
-    </div>
-    <br></br>
-    <br></br>
-    <br></br>
-    <div className = "font-loader"
-    style={{
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center"
-    }}
-    >
     </div>
     </body>
     </div>
