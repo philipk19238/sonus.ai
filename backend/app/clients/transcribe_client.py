@@ -34,6 +34,3 @@ class TranscribeClient(GCPClient):
             language_code=self.LANGUAGE_CODE,
             model=self.MODEL
         )
-
-
-

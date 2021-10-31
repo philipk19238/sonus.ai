@@ -9,6 +9,3 @@ class GCPClient:
         cred_file = self.WORKING_DIR + current_app.config.get('GOOGLE_APPLICATION_CREDENTIALS')
         creds = service_account.Credentials.from_service_account_file(cred_file)
         return gcp_instance(credentials=creds, *args, **kwargs)
-        
-
-        
