@@ -26,7 +26,7 @@ class SpectrogramConverter:
         self.path = path
 
     def load_file(self):
-        return librosa.load(self.path, offset=1.0, duration=10.0, sr=22050)
+        return librosa.load(self.path, duration=3, sr=22050)
 
     def scale_minmax(self, x, min_val=0.0, max_val=1.0):
         x_std = (x - x.min()) / (x.max() - x.min())

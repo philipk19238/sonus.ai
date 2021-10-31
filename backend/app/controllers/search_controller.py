@@ -22,5 +22,5 @@ class QueryPhoneNumberController(Resource):
 
     @search_controller.response(200, 'Successfully called endpoint')
     def get(self):
-        query_client = QueryAllClient(User.objects())
+        query_client = QueryAllClient(list(User.objects()))
         return query_client.create_output()

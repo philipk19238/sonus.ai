@@ -5,6 +5,5 @@ from ..extensions import db
 
 class User(BaseDocument):
 
-    id = db.UUIDField()
     phone_number = db.StringField()
     calls = db.EmbeddedDocumentListField(PhoneCall)

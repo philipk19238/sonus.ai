@@ -28,19 +28,17 @@ class UploadAudioController(Resource):
             sent_client = SentimentClient()
             sent_client.tearup(call_client.get_audio_stream())
             all_sents = sent_client.get_all_sentiments()
+            sent = int(np.mean(all_sents))
             curr_user = User.objects(phone_number=phone_number)
             if not curr_user:
                 curr_user = User.create(phone_number=phone_number)
             else:
                 curr_user = curr_user[0]
-            sent = sent_client.classify_sentiments(np.mean(all_sents))
-            print(sent, all_sents, flush=True)
             call = call_client.create_call()
             call.sentiment = sent
             call_arr = curr_user.calls
             call_arr.append(call)
             curr_user.update(calls=call_arr)
-            curr_user.reload()
             curr_user.save()
         except:
             traceback.print_exc()

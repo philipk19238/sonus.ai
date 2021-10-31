@@ -45,18 +45,3 @@ class SentimentClient:
         for chunk_name in self.stream_audio_file():
             scores.append(self.get_sentiment_from_chunk(chunk_name, model))
         return scores
-
-    def classify_sentiments(self, sentiment_score):
-        dic = {
-            1: 'satisfied',
-            2: 'happy',
-            3: 'agitated',
-            4: 'frustrated',
-            5: 'angry'
-        }
-        buckets = [1.6]
-        while len(buckets) < 5:
-            buckts.append(buckets[-1] + 1.6)
-        for idx, key in enumerate(buckets):
-            if sentiment_score <= key:
-                return dic[idx + 1]

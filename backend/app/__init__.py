@@ -1,15 +1,20 @@
 from flask import Flask
 from .global_config import Config
 
+
 def register_extensions(app):
     from .extensions import cors
+    from .extensions import db
 
     cors.init_app(app)
+    db.init_app(app)
+
 
 def register_api(app):
     from .controllers import api_bp
 
     app.register_blueprint(api_bp)
+
 
 def create_app():
     app = Flask(__name__)
