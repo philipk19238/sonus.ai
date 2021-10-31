@@ -32,5 +32,5 @@ class TranscribeClient(GCPClient):
             sample_rate_hertz=self.SAMPLE_RATE_HERTZ,
             encoding=self.ENCODING,
             language_code=self.LANGUAGE_CODE,
-            model=self.MODEL
+            # model=self.MODEL
         )

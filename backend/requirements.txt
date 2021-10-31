@@ -6,3 +6,14 @@ numpy
 twilio
 google-cloud-storage
 google-cloud-speech
+<<<<<<< HEAD
+=======
+twilio
+flask-mongoengine
+scikit-learn
+librosa
+scikit-image
+pandas
+numpy
+Pillow
+>>>>>>> a26f8063c4ebe5192059888c3272a1d027f89578
