@@ -19,6 +19,9 @@
   .hdr{
     margin-left: 110px; 
   }
+  .spacer{
+    margin-top: 110px;
+  }
   .demo{
     border-radius: 25px;
     margin-top: 80px;
