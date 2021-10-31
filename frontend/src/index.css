@@ -16,6 +16,9 @@
     margin: 4px 2px;
     border-radius: 12px;
   }
+  .hdr{
+    margin-left: 110px; 
+  }
 
   .demo{
     border-radius: 25px;
