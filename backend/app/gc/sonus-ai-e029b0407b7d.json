@@ -1,0 +1,12 @@
+{
+  "type": "service_account",
+  "project_id": "sonus-ai",
+  "private_key_id": "e029b0407b7d4408ce77d03c6aeb47ac38956d6a",
+  "private_key": "-----BEGIN PRIVATE KEY-----\nMIIEvAIBADANBgkqhkiG9w0BAQEFAASCBKYwggSiAgEAAoIBAQCKmWkFPizID+vF\nOIsXS8VS++/mbgr2swaXuoySvYfSuxmP32vdCcLi1kANfUVUA0M+AC1X54mI+dlZ\nxxycff4OxvPr8Zngqn2Jmr2246KDXzjRyOH68bohYgKsEHwtjjy82GxSxrYcVonk\n071RskBqouZaBWDGeGoz+lBQMyscY9RacuYN2d2Hc1sqpsCq3rvMcqXJz0bnay0Z\niD+703CCn2s2Krzxst0U7Cz8x21KXlMOIVTl9U+pMKnZXqfAZNDT/PhJloDC63/3\nwsCpg4hFI3hl2NSITNY29tt+7LPfj6Dvl283UeZNCGQJIi2XItaw85k2OSKpLlUc\nuow3U1DXAgMBAAECggEAKibQ+U64+Nlat57kMmARcZT8l4SVIgU9doy+Luykb7MG\naaql19IdqrZFQbT9Djl1zFfqcmcQ/Y8bCsJTEccBqsXYLkRKq7i+OEjO9N3TMYgW\ntDqXe6XjmT6BGIpk8cfl8fsSKrSTcxfglS7OT5faHnRPgUZMcd/yUL+KiHGfZWEG\neneDWKm3GmIe3YJ7VEEYhG+kXV5z6dTxy0G7PHZKWwGc5U5ncZEWHMU2UM6lfABt\nSTWTXxK+wXVN6iIoJJqmJ78JaL7EsuKXDcv0NvSvnm/4FkXzr5FKj4iGUAOM0b5X\nRTObIJFfiK/WlzvFsnChuqDgYxkLxD6ugl4zqe2sSQKBgQDBGimlmoCf4cytG8UE\njsfzRMRSYtf8ywjcmj3Mkdkw55Uv9V1tv5vhoz9inCP78ZAywsUF2VDHstFUUdNI\nF7dbmVTm0dPU9riciZJyz4W0uZ5zZoNB6Z4EQrwnmZNxp0SdKc+uzCGkda4Lak91\nZxRXMkStbFj1JpWCdvwLQmsXiQKBgQC3voRZb7GVtEcL+mdsbdKcP/vXgkmYuaxi\nVb8hlTfU0R64CJYfN6GuoeTALdqSZIAyrcXkS23WUIYKhXgd8hizsNguCSBeZDDc\nHgKNvRtNZpkydkaKFA7YuZ1aXCT+AG61QBNv4nh768Uj8JpCGOueNTomU00DWJQZ\ncwVBI76tXwKBgApc2hFOCksKNg6wJ9GHzAktDpARR+AEEVStXlWlGg+6zdHGDB6A\not/n/9XN5Ux2+TMQKryWnfQpj3xD69+5jhh3UQwWBJUwLFYSN+67XkSFlZBB1xdp\nbxZxcmF5p2T5AgChJskNoVyPCCkKqnr1bi0DwJXB88AsMufOdNYx2UdpAoGAO0Fu\njyUtIPk9fEhpuBcGt6sOvaZfs6gVRrUeaWck1TYHcRQbzb90HcxJ6Awhk9pjWXSf\nAAuvRVE8mQIIBahAfRqH7Pi2fppTA3mOG0WkG2b9+r8X6omjbBMYAr76kwtyqHMc\nkZV4g4Y6UmfSZ4R/38qMkTWF/ZFAWaC1TheH84MCgYBAMjzMcRdsrUAJXWlGbXz3\nLLVf9Qz4bPRrI3qLTjlGx+gD2VpON7Uh551cZB7PH90P+6//Y1Tc/nxIWeHDgkt4\naIAS9aJUWpBoouNDcGYsVcCsRjGhI0LajVZVezBSUbmEYBMWH8Rcs+hnVxtS2obF\nVX2L2QT1BccEzqra29RxHA==\n-----END PRIVATE KEY-----\n",
+  "client_email": "sonus-ai-admin@sonus-ai.iam.gserviceaccount.com",
+  "client_id": "103332771453122424528",
+  "auth_uri": "https://accounts.google.com/o/oauth2/auth",
+  "token_uri": "https://oauth2.googleapis.com/token",
+  "auth_provider_x509_cert_url": "https://www.googleapis.com/oauth2/v1/certs",
+  "client_x509_cert_url": "https://www.googleapis.com/robot/v1/metadata/x509/sonus-ai-admin%40sonus-ai.iam.gserviceaccount.com"
+}
