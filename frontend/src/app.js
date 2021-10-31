@@ -13,7 +13,7 @@ import './index.css';
 require('typeface-dm-sans');
 
 function App() {
-return (
+  return (
     <Switch>
      <Route exact path="/" component={Home} />
      <Route path="/dashboard" component={Dashboard} />

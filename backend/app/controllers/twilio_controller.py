@@ -4,6 +4,7 @@ from flask import Response
 
 twilio_controller = Namespace("Twilio", "Twilio endpoint", '/twilio')
 
+
 @twilio_controller.route('/inbound')
 @twilio_controller.doc(security=None)
 class ReceiveInboundController(Resource):
@@ -13,4 +14,4 @@ class ReceiveInboundController(Resource):
         resp = VoiceResponse()
         resp.record(recording_status_callback='/api/audio',
                     recording_status_callback_event='completed')
-        return Response(str(response), mimetype='text/xml')
+        return Response(str(resp), mimetype='text/xml')
