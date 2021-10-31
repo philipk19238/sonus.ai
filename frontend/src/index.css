@@ -7,7 +7,7 @@
     background-color: #3200BD;
     border: none;
     color: white;
-    width: 150px;
+    width: 225px;
     height: 50px;
     text-align: center;
     text-decoration: none;
@@ -19,7 +19,6 @@
   .hdr{
     margin-left: 110px; 
   }
-
   .demo{
     border-radius: 25px;
     margin-top: 80px;
@@ -27,3 +26,4 @@
     padding-left: 20px;
     box-shadow: 5px 5px 10px #3200BD;
   }
+  
