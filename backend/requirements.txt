@@ -3,3 +3,5 @@ flask-restx
 flask-cors
 requests
 numpy
+google-cloud-storage
+google-cloud-speech
