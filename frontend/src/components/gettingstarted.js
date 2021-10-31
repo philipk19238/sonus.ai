@@ -6,7 +6,7 @@ import {Link } from "react-router-dom";
     function gettingstarted() {
 
         return (
-            <Link to="/visualizer" style={{textDecoration: 'none'}}>
+            <Link to="/dashboard" style={{textDecoration: 'none'}}>
             <Button class = "btn" style={{color: '#FFFFFF', fontSize: 20, fontWeight: 'bold', textDecoration: 'none', textTransform: "none"}}> go to dashboard </Button>
             </Link>
         );

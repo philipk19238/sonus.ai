@@ -31,7 +31,7 @@ return (
                 alignItems: "left"
                 }}
             >
-    <p className = "hdr" align = "left" style={{ color: '#B8B8B8', fontSize: 24}} align="left">
+    <p className = "hdr" align = "left" style={{ color: '#B8B8B8', fontSize: 24}}>
     <span style={{ color: '#3200BD', fontSize: 24, fontWeight: 'bold' }} >sonus </span>is a customer success management<br></br>
     tool that allows you to prioritize your most <br></br>important clients.<br></br>
 </p>
