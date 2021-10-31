@@ -16,4 +16,5 @@ matplotlib
 scikit-learn
 scikit-image
 soundfile
+tensorflow
 

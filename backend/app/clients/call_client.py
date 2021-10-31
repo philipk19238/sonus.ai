@@ -3,6 +3,7 @@ import io
 
 from ..models.phone_call import PhoneCall
 
+
 class CallClient:
 
     def __init__(self, request_form):
@@ -12,7 +13,7 @@ class CallClient:
     def duration(self):
         return self.form.get('RecordingDuration')
 
-    @property 
+    @property
     def date(self):
         return self.form.get('RecordingStartTime')
 
@@ -31,5 +32,4 @@ class CallClient:
 
     def get_audio_stream(self):
         bytes_stream = requests.get(self.audio_link).content
-        return io.BytesIO(bytes_stream)
-
+        return bytes_stream

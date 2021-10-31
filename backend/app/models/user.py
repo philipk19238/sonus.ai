@@ -1,8 +1,9 @@
-from .base import BaseEmbeddedDocument
+from .base import BaseDocument
 from .phone_call import PhoneCall
 from ..extensions import db
 
-class User(BaseEmbeddedDocument):
+
+class User(BaseDocument):
 
     id = db.UUIDField()
     phone_number = db.StringField()

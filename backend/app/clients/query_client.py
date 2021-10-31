@@ -2,7 +2,8 @@ import numpy as np
 
 from abc import abstractmethod
 
-from ..model.user import User
+from ..models.user import User
+
 
 class QueryClient:
 
@@ -16,7 +17,7 @@ class QueryPhoneNumberClient(QueryClient):
     def __init__(self, phone_number):
         self.phone_number = phone_number
 
-    @property 
+    @property
     def user(self):
         return User.objects(phone_number=self.phone_number)
 
@@ -59,7 +60,7 @@ class QueryAllClient(QueryClient):
         return [user.phone_number for user in self.user]
 
     def create_output(self):
-        data {
+        data = {
             'average_sentiment': self.average_sentiment,
             'average_time': self.average_time,
             'total_calls': self.total_calls,
@@ -68,5 +69,3 @@ class QueryAllClient(QueryClient):
         return {
             'data': data
         }
-        
-            

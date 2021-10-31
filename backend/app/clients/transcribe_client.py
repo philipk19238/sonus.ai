@@ -1,20 +1,23 @@
 from google.cloud.speech import SpeechClient
 from google.cloud import speech
+from flask import current_app
 
 from .gcp_client import GCPClient
+
 
 class TranscribeClient(GCPClient):
 
     SAMPLE_RATE_HERTZ = 48000
-    LANGUAGE_CODE = "en-US" 
+    LANGUAGE_CODE = "en-US"
     ENCODING = speech.RecognitionConfig.AudioEncoding.LINEAR16
     MODEL = "PHONE_CALL"
 
     def __init__(self):
         self.client = self.get_client(SpeechClient)
-        
+
     def _get_speech_client(self):
-        cred_file = '/app/app' + current_app.config.get('GOOGLE_APPLICATION_CREDENTIALS')
+        cred_file = '/app/app' + \
+            current_app.config.get('GOOGLE_APPLICATION_CREDENTIALS')
         client = SpeechClient.from_service_account_file(cred_file)
         return client
 

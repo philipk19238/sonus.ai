@@ -4,10 +4,11 @@ import numpy as np
 import os
 
 from tensorflow.keras.models import load_model
-from Pillow import Image
+from PIL import Image
 
 from .call_client import CallClient
 from ..classifiers.spec_cnn.training import SpectrogramConverter
+
 
 class SentimentClient:
 
@@ -32,7 +33,8 @@ class SentimentClient:
         image_name = name + '.png'
         converter = SpectrogramConverter(chunk_name)
         converter.process_and_save(image_name)
-        img = np.asarray(Image.open(image_name).resize((128, 128)))
+        img = np.asarray(Image.open(image_name).resize((28, 28)))
+        img = img.reshape(1, 28, 28, 1)
         os.remove(image_name)
         os.remove(chunk_name)
         return model.predict(img)
@@ -41,9 +43,20 @@ class SentimentClient:
         model = load_model("/app/app/classifiers/spec_cnn/model")
         scores = []
         for chunk_name in self.stream_audio_file():
-            scores.append(self.get_sentiment_from_chunk(chunk_name))
+            scores.append(self.get_sentiment_from_chunk(chunk_name, model))
         return scores
-    
 
-
-        
+    def classify_sentiments(self, sentiment_score):
+        dic = {
+            1: 'satisfied',
+            2: 'happy',
+            3: 'agitated',
+            4: 'frustrated',
+            5: 'angry'
+        }
+        buckets = [1.6]
+        while len(buckets) < 5:
+            buckts.append(buckets[-1] + 1.6)
+        for idx, key in enumerate(buckets):
+            if sentiment_score <= key:
+                return dic[idx + 1]
