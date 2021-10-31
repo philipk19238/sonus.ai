@@ -20,7 +20,6 @@ return (
     <br></br>
 
     <body>
-      
     <img className = 'demo' src={demo} width="45%" height="25%" alt="sonus demo" align = "right"/>
     <div className = "font-loader" 
                 style={{
