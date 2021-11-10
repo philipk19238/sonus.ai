@@ -19,7 +19,7 @@ Sonus is built using a React frontend and a Python backend. We use MongoDB to st
 * We use Google's Speech to Text API to convert the audio stream into text. We then save this information into MongoDB for forther analyzation
 
 #### Text Based Sentiment Analysis
-* We implemented a naive bayes classification algorithm that was trained on text data from customer reviews. The model achieved an 86% accuracy rate in classifying whether or not the customer dialogue was positive or negative.
+* We implemented a naive bayes classification algorithm that was trained on text data from customer reviews. The model achieved an 86% accuracy rate in classifying whether or not the customer dialogue was positive or negative
 
 
 
