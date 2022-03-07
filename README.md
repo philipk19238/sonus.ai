@@ -9,7 +9,7 @@ Sonus is a customer success management tool that is designed to be used in conju
 ## How we built it
 #### Architecture
 <img src="https://github.com/philipk19238/sonus.ai/blob/master/readme_data/Sonus%20Architecture.drawio.png?raw=true"/>
-Sonus is built using a React frontend and a Python backend. We use MongoDB to store data and Google Cloud Storage to store audio & transcript data. We also trained several machine learning models using white papers and data we found online. 
+Sonus is built using a React frontend and a Python backend. We use MongoDB to store data and Google Cloud Storage to store audio & transcript data. We use a CNN trained on spectrogram images in conjunction with NLP analysis on text data to classify emotions
 
 ### Workflow
 #### Twilio Webook
@@ -20,6 +20,9 @@ Sonus is built using a React frontend and a Python backend. We use MongoDB to st
 
 #### Text Based Sentiment Analysis
 * We implemented a naive bayes classification algorithm that was trained on text data from customer reviews. The model achieved an 86% accuracy rate in classifying whether or not the customer dialogue was positive or negative
+
+#### Imaged Based Sentiment Analysis
+* We converted emotionally charged audio data into an image and trained a CNN algorithm on top of it. It provided us with a 90% accuracy rate in classifying the correct emotion of the aduio
 
 
 
